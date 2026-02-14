@@ -96,3 +96,12 @@ nav a {
 .service-card p {
   color: #555;
 }
+
+nav a.active {
+  border-bottom: 2px solid #1f3a5f;
+  padding-bottom: 4px;
+}
+
+.page {
+  padding: 120px 0 80px 0;
+}
