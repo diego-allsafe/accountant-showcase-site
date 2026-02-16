@@ -105,3 +105,10 @@ nav a.active {
 .page {
   padding: 120px 0 80px 0;
 }
+.contact-info {
+  margin-top: 40px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
