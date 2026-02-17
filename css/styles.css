@@ -187,3 +187,7 @@ html,
 body {
   overflow-x: hidden;
 }
+header.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  transition: background 0.3s ease;
+}
