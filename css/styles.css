@@ -160,3 +160,14 @@ nav {
   font-size: 18px;
   color: #1f3a5f;
 }
+
+.page ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.page li {
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 1.6;
+}
