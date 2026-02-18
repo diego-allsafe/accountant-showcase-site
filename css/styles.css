@@ -200,3 +200,71 @@ header.scrolled {
   font-size: 32px;
   margin-bottom: 20px;
 }
+
+/* =========================
+   CONTACTO - HERO CON IMAGEN
+   Sección full screen con fondo y caja centrada
+   ========================= */
+
+.contact-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../assets/images/ciudad.jpg") center/cover no-repeat;
+}
+
+.contact-box {
+  background: #1f2937;
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-box h1 {
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  margin-bottom: 25px;
+}
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: white;
+  border-radius: 4px;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================
+   FOOTER - ESTILO OSCURO
+   Fondo coherente con sección de contacto
+   ========================= */
+
+footer {
+  background-color: #1f2937;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer .container {
+  padding: 0 60px;
+}
+
+footer p {
+  margin: 0;
+}

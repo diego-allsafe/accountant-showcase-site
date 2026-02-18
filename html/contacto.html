@@ -11,7 +11,7 @@
     <title>Contacto | Estudio Contable</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="home">
     <!-- ===== HEADER ===== -->
 
     <header>
@@ -26,19 +26,29 @@
         </ul>
       </nav>
     </header>
-    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <!-- ===== CONTACTO CON FONDO Y FORMULARIO CENTRADO ===== -->
 
-    <main class="container page">
-      <h1>Contacto</h1>
-      <p>
-        Si necesitás asesoramiento o querés analizar tu situación impositiva,
-        podés comunicarte con nosotros por los siguientes medios:
-      </p>
-      <section class="contact-info">
-        <p><strong>Correo electrónico:</strong> contacto@estudio.com</p>
-        <p><strong>Teléfono:</strong> +54 11 0000-0000</p>
-      </section>
+    <main class="contact-hero">
+      <div class="contact-box">
+        <h1>Estamos para responderte</h1>
+        <p>
+          Si necesitás asesoramiento o querés analizar tu situación impositiva,
+          escribinos y nos pondremos en contacto a la brevedad.
+        </p>
+
+        <form>
+          <div class="form-row">
+            <input type="text" placeholder="Nombre" required />
+            <input type="email" placeholder="Correo electrónico" required />
+          </div>
+
+          <textarea placeholder="Tu mensaje..." rows="4" required></textarea>
+
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </div>
     </main>
+
     <!-- ===== FOOTER ===== -->
 
     <footer>
