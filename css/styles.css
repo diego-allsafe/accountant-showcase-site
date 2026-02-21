@@ -250,6 +250,31 @@ header.scrolled {
 }
 
 /* =========================
+   NOSOTROS - BLOQUE EQUIPO
+   Layout horizontal texto + imagen
+   ========================= */
+
+.about-team {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.about-content {
+  flex: 0.8;
+}
+
+.about-image {
+  flex: 1.2;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* =========================
    FOOTER - ESTILO OSCURO
    Fondo coherente con sección de contacto
    ========================= */
