@@ -291,7 +291,7 @@ header.scrolled {
 
 .services-grid {
   display: flex;
-  gap: 30px;
+  gap: 60px;
   margin-top: 40px;
 }
 
@@ -340,6 +340,63 @@ header.scrolled {
 
 .services-section {
   background-color: #f5f7f9;
+}
+
+/* =========================
+   SERVICIOS CON IMAGEN DE FONDO
+========================= */
+
+.service-box {
+  flex: 1;
+  height: 300px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: scale(1.02);
+}
+
+/* Oscurecedor */
+
+.service-box .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* más transparente */
+  color: white;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.service-box h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.service-box p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Imágenes específicas */
+
+.service-box.mono {
+  background-image: url("../assets/images/monotributista.jpg");
+}
+
+.service-box.auto {
+  background-image: url("../assets/images/autonomos.jpg");
+}
+
+.service-box.pyme {
+  background-image: url("../assets/images/pyme.jpg");
 }
 
 /* =========================
