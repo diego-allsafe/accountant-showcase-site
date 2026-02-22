@@ -285,6 +285,64 @@ header.scrolled {
 }
 
 /* =========================
+   SERVICIOS - GRID PRINCIPAL
+   Tres columnas alineadas
+========================= */
+
+.services-grid {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-box {
+  flex: 1;
+  background-color: #f5f7f9;
+  padding: 30px;
+  border-radius: 6px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-box h2 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.service-box p {
+  font-size: 16px;
+  color: #555;
+}
+.services-section {
+  background-color: #f5f7f9;
+  box-shadow: inset 0 1px 0 #e0e0e0;
+}
+.service-box {
+  flex: 1;
+  background-color: white;
+  padding: 30px;
+  border-radius: 6px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* efecto sutil profesional */
+.service-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   SECCION SERVICIOS - FONDO FULL WIDTH
+========================= */
+
+.services-section {
+  background-color: #f5f7f9;
+}
+
+/* =========================
    FOOTER - ESTILO OSCURO
    Fondo coherente con sección de contacto
    ========================= */
