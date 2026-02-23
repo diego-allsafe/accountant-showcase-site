@@ -21,7 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateView() {
     newsItems.forEach((item, index) => {
-      item.style.display = index < visible ? "block" : "none";
+      if (index < visible) {
+        item.style.display = "block";
+
+        // pequeña pausa para activar transición
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, 50);
+      } else {
+        item.classList.remove("visible");
+        item.style.display = "none";
+      }
     });
   }
 
