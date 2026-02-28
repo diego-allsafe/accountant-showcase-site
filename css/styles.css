@@ -1,6 +1,7 @@
 /* =========================
    BASE GLOBAL
 ========================= */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,7 +9,6 @@ body {
   background-color: #f5f7f9;
   line-height: 1.6;
 
-  /* Layout flexible para que el footer quede siempre abajo */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -25,23 +25,33 @@ body {
   padding: 0 60px;
 }
 
+main {
+  flex: 1;
+}
+
 /* =========================
    HEADER
 ========================= */
 
 header {
   padding: 20px 60px;
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 10;
+}
+
+/* Flotante solo en Home y Contacto */
+.home header,
+.contact header {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: transparent;
 }
 
-header.scrolled {
-  background: rgba(0, 0, 0, 0.85);
-  transition: background 0.3s ease;
+/* Sólido en páginas internas */
+body:not(.home):not(.contact) header {
+  position: relative;
+  background: #1f2937;
 }
 
 nav {
@@ -53,15 +63,15 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
   margin: 0;
   padding: 0;
 }
 
+/* Links blancos siempre */
 nav a {
   text-decoration: none;
-  color: #1f3a5f;
+  color: white;
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 0.5px;
@@ -81,7 +91,7 @@ nav a.active {
 }
 
 /* =========================
-   HERO
+   HERO HOME
 ========================= */
 
 .hero {
@@ -112,6 +122,25 @@ nav a.active {
 }
 
 /* =========================
+   PÁGINAS INTERNAS
+========================= */
+
+.page {
+  padding: 160px 0 80px 0;
+}
+
+.page h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+.page p,
+.page li {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* =========================
    BOTONES
 ========================= */
 
@@ -130,122 +159,6 @@ nav a.active {
 }
 
 /* =========================
-   PÁGINAS INTERNAS
-========================= */
-
-.page {
-  padding: 120px 0 80px 0;
-}
-
-.page h1 {
-  font-size: 42px;
-  margin-bottom: 30px;
-}
-
-.page p,
-.page li {
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.page ul {
-  margin-top: 20px;
-  padding-left: 20px;
-}
-
-.page li {
-  margin-bottom: 12px;
-}
-
-/* =========================
-   NOSOTROS
-========================= */
-
-.about-team {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.about-content {
-  flex: 0.8;
-}
-
-.about-image {
-  flex: 1.2;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* =========================
-   SERVICIOS
-========================= */
-
-.services-section {
-  background-color: #f5f7f9;
-}
-
-.services-grid {
-  display: flex;
-  gap: 60px;
-  margin-top: 40px;
-}
-
-.service-box {
-  flex: 1;
-  height: 300px;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border-radius: 6px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  transition: transform 0.3s ease;
-}
-
-.service-box:hover {
-  transform: scale(1.02);
-}
-
-.service-box .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  color: white;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.service-box h2 {
-  margin-bottom: 10px;
-  font-size: 22px;
-}
-
-.service-box p {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.service-box.mono {
-  background-image: url("../assets/images/monotributista.jpg");
-}
-
-.service-box.auto {
-  background-image: url("../assets/images/autonomos.jpg");
-}
-
-.service-box.pyme {
-  background-image: url("../assets/images/pyme.jpg");
-}
-
-/* =========================
    NOVEDADES
 ========================= */
 
@@ -255,6 +168,16 @@ nav a.active {
   padding: 25px;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.news-item.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .news-item + .news-item {
@@ -281,21 +204,7 @@ nav a.active {
 .news-item a:hover {
   text-decoration: underline;
 }
-/* Animación suave al mostrar noticias */
-.news-item {
-  opacity: 0;
-  transform: translateY(15px);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-}
 
-.news-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Imagen superior en noticias */
 .news-image {
   width: 100%;
   height: 180px;
@@ -303,6 +212,7 @@ nav a.active {
   border-radius: 6px 6px 0 0;
   margin-bottom: 15px;
 }
+
 /* =========================
    CONTACTO
 ========================= */
@@ -312,7 +222,7 @@ nav a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 160px 20px 40px 20px;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("../assets/images/ciudad.jpg") center/cover no-repeat;
@@ -336,11 +246,6 @@ nav a.active {
   background: #111827;
   color: white;
   border-radius: 4px;
-}
-
-.contact-box input::placeholder,
-.contact-box textarea::placeholder {
-  color: #9ca3af;
 }
 
 /* =========================
