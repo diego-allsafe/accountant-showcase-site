@@ -8,7 +8,6 @@ body {
   color: #1f1f1f;
   background-color: #f5f7f9;
   line-height: 1.6;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -39,7 +38,7 @@ header {
   z-index: 10;
 }
 
-/* Flotante solo en Home y Contacto */
+/* Header flotante solo en Home y Contacto */
 .home header,
 .contact header {
   position: absolute;
@@ -48,7 +47,7 @@ header {
   background: transparent;
 }
 
-/* Sólido en páginas internas */
+/* Header sólido en internas */
 body:not(.home):not(.contact) header {
   position: relative;
   background: #1f2937;
@@ -68,7 +67,6 @@ nav ul {
   padding: 0;
 }
 
-/* Links blancos siempre */
 nav a {
   text-decoration: none;
   color: white;
@@ -125,8 +123,15 @@ nav a.active {
    PÁGINAS INTERNAS
 ========================= */
 
+/* Espaciado normal en páginas internas */
 .page {
-  padding: 160px 0 80px 0;
+  padding: 40px 0 80px 0;
+}
+
+/* Solo Home y Contacto necesitan compensar header flotante */
+.home .page,
+.contact .page {
+  padding-top: 160px;
 }
 
 .page h1 {
@@ -152,6 +157,8 @@ nav a.active {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -162,6 +169,15 @@ nav a.active {
    NOVEDADES
 ========================= */
 
+.intro-news {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  font-size: 20px;
+  line-height: 1.9;
+  color: #2c2c2c;
+}
+
+/* Cards */
 .news-item {
   margin-top: 40px;
   background: white;
